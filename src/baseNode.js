@@ -1,3 +1,5 @@
+// baseNode.js
+
 import { Handle } from 'reactflow';
 
 export const BaseNode = ({ id, data, label, handles = [], fields = [], styles = {} }) => {
@@ -53,6 +55,7 @@ export const BaseNode = ({ id, data, label, handles = [], fields = [], styles = 
                     return (
                       <textarea
                         value={field.text}
+                        style={{ width: field.style.width, height: field.style.height }}
                         onChange={(e) => field.onChange(id, field.name, e.target.value)}
                         className='bg-white border border-gray-300 rounded-md m-2 p-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
                       />
