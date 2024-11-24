@@ -12,6 +12,7 @@ import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 import { KnowledgeBaseSearchNode } from './nodes/knowledgeBaseSearchNode';
 import { CSVLoaderNode } from './nodes/CSVLoaderNode';
+import { SearchMessagesNode } from './nodes/searchMessagesNode';
 
 import 'reactflow/dist/style.css';
 
@@ -24,7 +25,7 @@ const nodeTypes = {
   text: TextNode,
   knowledgeBaseSearch: KnowledgeBaseSearchNode,
   CSVLoader: CSVLoaderNode,
-  
+  SearchMessages: SearchMessagesNode,
 };
 
 const selector = (state) => ({

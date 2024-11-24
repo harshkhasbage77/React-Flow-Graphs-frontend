@@ -37,6 +37,14 @@ export const BaseNode = ({ id, data, label, handles = [], fields = [], styles = 
                   onChange={(e) => field.onChange(id, field.name, e.target.files[0])}
                   />
                 );
+                case 'button':
+                return (
+                  <button
+                  onClick={field.onClick}
+                  >
+                  {field.buttonText}
+                  </button>
+                );
                 case 'text':
                 default:
                 return (
