@@ -14,24 +14,40 @@ export const BaseNode = ({ id, data, label, handles = [], fields = [], styles = 
           <div key={index} style={{ marginBottom: '5px' }}>
             <label>
               {field.label}:
-              {field.type === 'select' ? (
-                <select
+              {(() => {
+              switch (field.type) {
+                case 'select':
+                return (
+                  <select
                   value={data[field.name]}
                   onChange={(e) => field.onChange(id, field.name, e.target.value)}
-                >
+                  >
                   {field.options.map((option, idx) => (
                     <option key={idx} value={option}>
-                      {option}
+                    {option}
                     </option>
                   ))}
-                </select>
-              ) : (
-                <input
+                  </select>
+                );
+                case 'file':
+                return (
+                  <input
+                  type="file"
+                  accept={field.accept}
+                  onChange={(e) => field.onChange(id, field.name, e.target.files[0])}
+                  />
+                );
+                case 'text':
+                default:
+                return (
+                  <input
                   type="text"
                   value={field.text}
                   onChange={(e) => field.onChange(id, field.name, e.target.value)}
-                />
-              )}
+                  />
+                );
+              }
+              })()}
             </label>
           </div>
         ))}
