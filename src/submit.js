@@ -38,11 +38,26 @@ export const SubmitButton = () => {
 
   const closeModal = () => setModalVisible(false);
 
+  const buttonStyle = {
+    background: 'linear-gradient(145deg, rgb(0 205 154), rgb(13 118 141))',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)',
+    borderRadius: '8px',
+    weight: '600',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '20px',
+    transition: 'all 1s ease',
+    outline: 'none'
+};
+
   return (
     <div className="flex items-center justify-center">
       <button
         onClick={handleSubmit}
         className="px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+        style={buttonStyle}
       >
         Submit
       </button>

@@ -6,7 +6,6 @@ export const DraggableNode = ({ type, label }) => {
       event.target.style.cursor = 'grabbing';
       event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
       event.dataTransfer.effectAllowed = 'move';
-      // event.dataTransfer.dropEffect = 'move';
     };
   
     return (
@@ -20,11 +19,9 @@ export const DraggableNode = ({ type, label }) => {
         display: 'flex', 
         alignItems: 'center', 
         borderRadius: '8px',
-        // backgroundColor: '#1C2536',
         fontFamily: "Poppins, sans-serif",
         justifyContent: 'center', 
         flexDirection: 'column',
-        // backgroundColor: 'linear-gradient(145deg, rgb(0 205 154), rgb(13 118 141))',
       }} 
       draggable
       >
