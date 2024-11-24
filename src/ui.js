@@ -11,6 +11,7 @@ import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 import { KnowledgeBaseSearchNode } from './nodes/knowledgeBaseSearchNode';
+import { CSVLoaderNode } from './nodes/CSVLoaderNode';
 
 import 'reactflow/dist/style.css';
 
@@ -22,6 +23,8 @@ const nodeTypes = {
   customOutput: OutputNode,
   text: TextNode,
   knowledgeBaseSearch: KnowledgeBaseSearchNode,
+  CSVLoader: CSVLoaderNode,
+  
 };
 
 const selector = (state) => ({
