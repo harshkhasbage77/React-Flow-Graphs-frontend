@@ -1,4 +1,4 @@
-// draggableNode.js
+// // draggableNode.js
 
 export const DraggableNode = ({ type, label }) => {
     const onDragStart = (event, nodeType) => {
@@ -11,7 +11,7 @@ export const DraggableNode = ({ type, label }) => {
   
     return (
       <div
-      className={`${type} cursor-grab text-white font-medium px-4 py-2 rounded-lg shadow hover:bg-blue-600 backdrop-filter backdrop-blur-lg bg-opacity-30`}
+      className={`${type} cursor-grab text-white font-medium px-4 py-2 rounded-lg shadow bg-teal-900 hover:bg-teal-800 backdrop-filter transition duration-0 hover:duration-150 ease-in-out`}
       onDragStart={(event) => onDragStart(event, type)}
       onDragEnd={(event) => (event.target.style.cursor = 'grab')}
       style={{ 
@@ -20,16 +20,15 @@ export const DraggableNode = ({ type, label }) => {
         display: 'flex', 
         alignItems: 'center', 
         borderRadius: '8px',
-        backgroundColor: '#1C2536',
+        // backgroundColor: '#1C2536',
         fontFamily: "Poppins, sans-serif",
         justifyContent: 'center', 
         flexDirection: 'column'
       }} 
       draggable
       >
-        
+
         <span style={{ color: '#fff' }}>{label}</span>
       </div>
     );
   };
-  

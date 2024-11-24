@@ -4,7 +4,8 @@ import { SubmitButton } from './submit';
 
 function App() {
   return (
-    <div className='min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 flex flex-col p-4'>
+    // <div className='min-h-screen bg-gradient-to-r from-gray-800 via-gray-900 to-black flex flex-col p-4'>
+    <div className='min-h-screen bg-teal-50 flex flex-col p-4'>
       <div className="mt-4">
         <PipelineToolbar />
       </div>
