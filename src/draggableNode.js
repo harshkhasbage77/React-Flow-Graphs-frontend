@@ -23,7 +23,8 @@ export const DraggableNode = ({ type, label }) => {
         // backgroundColor: '#1C2536',
         fontFamily: "Poppins, sans-serif",
         justifyContent: 'center', 
-        flexDirection: 'column'
+        flexDirection: 'column',
+        // backgroundColor: 'linear-gradient(145deg, rgb(0 205 154), rgb(13 118 141))',
       }} 
       draggable
       >

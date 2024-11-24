@@ -51,9 +51,9 @@ export const LLMNode = ({ id, data }) => {
       ]}
       styles={{ backgroundColor: '#fce4ec' }}
       fields={[
-        { label: 'System', value: data.system, type: 'text', name: 'system', onChange: updateField },
-        { label: 'Prompt', value: data.prompt, type: 'text', name: 'prompt', onChange: updateField },
-        { label: 'Response', value: data.response, type: 'text', name: 'response', onChange: updateField },
+        { label: 'System', value: data.system, type: 'textarea', name: 'system', onChange: updateField },
+        { label: 'Prompt', value: data.prompt, type: 'textarea', name: 'prompt', onChange: updateField },
+        { label: 'Response', value: data.response, type: 'textarea', name: 'response', onChange: updateField },
         { label: 'Model', value: data.system, type: 'select', options: ['4o-model', 'GPT-3.5'], name: 'systemModel', onChange: updateField },
       ]}
     />
