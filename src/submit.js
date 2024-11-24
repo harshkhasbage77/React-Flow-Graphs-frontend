@@ -1,9 +1,54 @@
 // submit.js
+import {useStore} from './store';
 
 export const SubmitButton = () => {
+    const { nodes, edges } = useStore((state) => ({
+        nodes: state.nodes,
+        edges: state.edges,
+      }));
+
+    const handleSubmit = async () => {
+        try {
+          // Prepare the request payload
+          const payload = { nodes, edges };
+
+          console.log('Payload:', payload);
+    
+          // Send data to the backend
+          const response = await fetch('http://127.0.0.1:8000/pipelines/parse', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+          console.log(response);
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch response from backend');
+          }
+    
+          const result = await response.json();
+    
+          // Display an alert with the result
+          const { num_nodes, num_edges, is_dag } = result;
+          alert(
+            `Pipeline Details:\n- Number of Nodes: ${num_nodes}\n- Number of Edges: ${num_edges}\n- Is Directed Acyclic Graph: ${is_dag}`
+          );
+        } catch (error) {
+          console.error('Error submitting pipeline:', error);
+          alert('An error occurred while submitting the pipeline. Please try again.');
+        }
+      };
+
     return (
         <div className="" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} >
-            <button className="" type="submit" style={buttonStyle}>Submit</button>
+            <button 
+                onClick={handleSubmit}
+                className="" type="submit" style={buttonStyle}
+            >
+                Submit
+            </button>
         </div>
     );
 }
