@@ -15,6 +15,7 @@ export const PipelineToolbar = () => {
                 <DraggableNode type='CSVLoader' label='CSV Loader' />
                 <DraggableNode type='SearchMessages' label='Search Messages' />
                 <DraggableNode type='InvestmentMemo' label='Investment Memo' />
+                <DraggableNode type='DocumentMeetingSummary' label='Document/Meeting Summary Connect' />
             </div>
         </div>
     );
