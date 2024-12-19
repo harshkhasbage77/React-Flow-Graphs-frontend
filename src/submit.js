@@ -15,7 +15,7 @@ export const SubmitButton = () => {
       const payload = { nodes, edges };
 
       // Send data to the backend
-      const response = await fetch('http://127.0.0.1:8000/pipelines/parse', {
+      const response = await fetch('https://no-code-ai-automations-platform-backend.onrender.com/pipelines/parse', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
